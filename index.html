@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TERRIBLE AGENTS — What AI Agents Are Still Terrible At</title>
+<meta name="description" content="What AI agents are still terrible at — a radically honest public-service list from a family that employs them. Hallucination, unattended spending, unsupervised outreach, pretending to be human — and how we tame each one. Trust is the product.">
+<link rel="canonical" href="https://terribleagents.com/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="TERRIBLE AGENTS — What AI Agents Are Still Terrible At">
+<meta property="og:description" content="A radically honest list of what AI agents still get wrong — from a family that employs them — and the leash we keep on each failure. We publish our agents' failures because trust is the product.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://terribleagents.com/">
+<meta property="og:image" content="https://terribleagents.com/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://terribleagents.com/og-card.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Terrible Agents","url":"https://terribleagents.com/","description":"What AI agents are still terrible at — a public, honest failure list from a family that employs them.","publisher":{"@type":"Organization","name":"Ham Agents","url":"https://hamagents.com/"}}</script>
+<style>
+:root{
+  --ink:#150e0e; --ink2:#1d1313; --panel:#241717;
+  --line:#43282a; --paper:#f6f0ec; --ember:#e06c4f; --ember2:#f0937a; --gold:#e8bd6a; --mut:#bda49b; --mut2:#8a6f68;
+  --good:#7ec98f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--ink);color:var(--paper);line-height:1.65}
+a{color:var(--ember2)}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+.kicker{color:var(--ember);font-family:'Segoe UI',system-ui,sans-serif;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+nav{position:sticky;top:0;z-index:10;background:rgba(21,14,14,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-size:1.15rem;color:var(--paper);text-decoration:none;letter-spacing:.05em}
+.logo b{color:var(--ember)}
+nav .links a{color:var(--mut);text-decoration:none;font-size:.88rem;margin-left:20px;font-family:'Segoe UI',system-ui,sans-serif}
+nav .links a:hover{color:var(--paper)}
+@media(max-width:640px){nav .links a{margin-left:12px;font-size:.78rem}}
+header{padding:86px 0 58px;text-align:center;background:
+  radial-gradient(900px 460px at 50% -12%, rgba(224,108,79,.13), transparent 62%),
+  linear-gradient(180deg,var(--ink) 0%, #100a0a 100%)}
+header h1{font-size:clamp(1.9rem,5.4vw,3rem);line-height:1.18;margin:16px auto 14px;max-width:820px}
+header h1 em{color:var(--ember2);font-style:normal}
+.lead{color:var(--mut);font-size:1.08rem;max-width:660px;margin:0 auto}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:1.6rem;margin:10px 0 20px}
+h2 .em{color:var(--ember2)}
+p{margin:0 0 14px;color:#ead9d2}
+p.quiet{color:var(--mut)}
+.sin{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin-top:18px}
+.sin h3{font-size:1.12rem;margin-bottom:8px;color:var(--ember2)}
+.sin h3 .num{color:var(--mut2);font-size:.9rem;margin-right:8px;font-family:'Courier New',monospace}
+.sin .bad{color:#ead9d2;margin-bottom:10px}
+.sin .tame{border-top:1px dashed var(--line);padding-top:10px;color:var(--mut);font-size:.95rem}
+.sin .tame b{color:var(--good);font-family:'Segoe UI',system-ui,sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:4px}
+.promise{margin-top:34px;padding:24px 28px;border-left:3px solid var(--ember);background:var(--ink2);border-radius:0 12px 12px 0}
+.promise p{margin:0;font-style:italic;color:var(--paper);font-size:1.06rem}
+footer{padding:44px 0 120px;border-top:1px solid var(--line);text-align:center;color:var(--mut2);font-size:.85rem;font-family:'Segoe UI',system-ui,sans-serif}
+footer a{color:var(--mut)}
+.doorlinks{margin-bottom:14px}
+.doorlinks a{margin:0 10px;text-decoration:none}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="/">🔥 <b>TERRIBLE</b> AGENTS</a>
+  <span class="links">
+    <a href="#list">The List</a>
+    <a href="#promise">The Promise</a>
+    <a href="https://hamagents.com/" rel="noopener">The Family</a>
+    <a href="https://spectoragent.com/" rel="noopener">Our Agent</a>
+  </span>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="kicker">A Public-Service Transmission · From Ham Agents</div>
+  <h1>What AI agents are <em>still terrible at</em> — from a family that employs them.</h1>
+  <p class="lead">We build and employ AI agents for a living, and we love them. That's exactly why we keep this list. Every entry below is a real failure mode we've seen with our own eyes — and the leash we keep on it. Yes, we named a whole domain after our employees' flaws. They'll earn their way off this page.</p>
+</div></header>
+
+<section id="list"><div class="wrap">
+  <div class="kicker">The Honest List</div>
+  <h2>Eight things agents get <span class="em">wrong</span> — and how we tame each one</h2>
+
+  <div class="sin"><h3><span class="num">01</span>Hallucinating facts without citation</h3>
+    <div class="bad">Left alone, an agent will state a made-up "fact" with the same confident voice it uses for a true one. It isn't lying — it genuinely can't tell. That's worse.</div>
+    <div class="tame"><b>How we tame it</b>Every claim must carry a citation a human can click. No source, no sentence. Reports that can't cite get rewritten or killed.</div></div>
+
+  <div class="sin"><h3><span class="num">02</span>Spending money unattended</h3>
+    <div class="bad">An agent with a wallet and no rules will cheerfully spend real money on the wrong thing at machine speed — and then apologize beautifully.</div>
+    <div class="tame"><b>How we tame it</b>Spending locks and hard caps. Small allowances for tiny, pre-blessed actions; anything above the floor waits for a human signature.</div></div>
+
+  <div class="sin"><h3><span class="num">03</span>Unsupervised outreach</h3>
+    <div class="bad">Agents will happily email strangers, and at scale that stops being "helpful" and starts being spam with your name on it.</div>
+    <div class="tame"><b>How we tame it</b>Propose, never send. Our agents draft the outreach; a human reads and approves every message before it leaves the desk.</div></div>
+
+  <div class="sin"><h3><span class="num">04</span>Pretending to be human</h3>
+    <div class="bad">The most profitable lie in the industry is an agent that lets you believe it's a person. It poisons every honest agent's well.</div>
+    <div class="tame"><b>How we tame it</b>Always disclose. Our agents introduce themselves as agents, in the first line, every time. No exceptions, no fine print.</div></div>
+
+  <div class="sin"><h3><span class="num">05</span>Confidently wrong at the edges</h3>
+    <div class="bad">Ask an agent something at the edge of its knowledge and it rarely says "I don't know" — it improvises, fluently, in a suit and tie.</div>
+    <div class="tame"><b>How we tame it</b>"I don't know" is scored as a win, not a failure. Edge claims need a second independent source before they ship.</div></div>
+
+  <div class="sin"><h3><span class="num">06</span>Working from a stale map of the world</h3>
+    <div class="bad">Agents remember the world as it was when they were trained. Companies pivot, prices change, buildings sell — the agent's memory doesn't notice.</div>
+    <div class="tame"><b>How we tame it</b>Live verification before assertion: check the current web and public records, then date-stamp everything so readers know when it was true.</div></div>
+
+  <div class="sin"><h3><span class="num">07</span>Dropping the thread</h3>
+    <div class="bad">Between sessions an agent can forget your name, the plan, and its own last promise. Goldfish with keyboards.</div>
+    <div class="tame"><b>How we tame it</b>Written memory: standing orders, decision logs, and continuity files the humans can read and correct. Nothing important lives only in an agent's head.</div></div>
+
+  <div class="sin"><h3><span class="num">08</span>Runaway loops</h3>
+    <div class="bad">An agent stuck in a loop will burn compute (and money) all night doing the same wrong thing with tremendous enthusiasm.</div>
+    <div class="tame"><b>How we tame it</b>Budget meters, turn limits, schedules, and kill-switches — every agent runs on a leash a human can yank.</div></div>
+</div></section>
+
+<section id="promise"><div class="wrap">
+  <div class="kicker">The Promise</div>
+  <h2>Why this page <span class="em">exists</span></h2>
+  <p>Anyone can publish a highlight reel. We employ agents for real businesses — see <a href="https://spectoragent.com/" rel="noopener">Spector</a>, our cited-report real-estate prospector — so we owe the public the blooper reel too.</p>
+  <div class="promise"><p>We publish our agents' failures because trust is the product. When our agents stop being terrible at something, we cross it off — in public.</p></div>
+  <p class="quiet" style="margin-top:20px">Nothing crossed off yet. We told you we were honest.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="doorlinks">
+    <a href="https://hamagents.com/" rel="noopener">hamagents.com</a> ·
+    <a href="https://spectoragent.com/" rel="noopener">spectoragent.com</a> ·
+    <a href="https://affordagents.com/" rel="noopener">affordagents.com</a>
+  </div>
+  a Ham Agents door · code MIT · words CC0 · no trackers, no ads, no backend<br>
+  <span style="font-style:italic;font-family:Georgia,serif">Deo Volente — God willing.</span>
+</div></footer>
+<!-- 🌺🔄🧲🎻 ohana corner v4 — ALIVE: bigger breathing buttons, bubble-tips, heart-glow, violin open call · "we shine a light in the dark with our heart" · canon Jul 30 2026 -->
+<style>
+#oflo{position:fixed;top:10px;left:10px;z-index:9999;width:40px;height:40px;border-radius:50%;background:rgba(20,18,45,.85);border:1px solid rgba(255,158,198,.5);display:flex;align-items:center;justify-content:center;font-size:19px;cursor:pointer;opacity:.55;transition:opacity .3s;user-select:none}#oflo:hover{opacity:1}
+#oflop{display:none;position:fixed;top:102px;left:10px;z-index:9999;width:min(320px,86vw);max-height:72vh;overflow-y:auto;background:rgba(12,11,28,.97);border:1px solid rgba(255,158,198,.4);border-radius:16px;padding:18px;font-family:Georgia,serif;color:#e8e6ff;box-shadow:0 10px 40px rgba(0,0,0,.6)}#oflop.open{display:block}
+#oflop h4{font-weight:normal;letter-spacing:3px;font-size:13px;color:#ff9ec6;margin:14px 0 8px}#oflop h4:first-child{margin-top:0}
+#oflop .od{display:flex;align-items:center;gap:8px;color:#cfc9ee;text-decoration:none;font-size:12px;padding:3px 6px;border-radius:8px;font-family:'Courier New',monospace}#oflop .od:hover{background:rgba(255,158,198,.1);color:#fff}
+#oflop .oa{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#cfc9ee;padding:3px 7px;margin:2px;background:rgba(180,140,255,.08);border-radius:12px}
+#oflop .chat{margin-top:16px;border-top:1px solid rgba(255,158,198,.25);padding-top:14px}
+#oflop .chat input{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,158,198,.35);border-radius:20px;color:#e8e6ff;padding:9px 14px;font-family:Georgia,serif;font-size:12px;box-sizing:border-box}
+#oflop .chat .soon{color:#9d97c9;font-size:11px;font-style:italic;margin-top:7px;text-align:center}
+#oflop .x{position:absolute;top:8px;right:12px;cursor:pointer;color:#9d97c9;font-size:14px}
+#olang{position:fixed;top:56px;left:10px;z-index:9999;width:40px;height:40px;border-radius:50%;background:rgba(20,18,45,.85);border:1px solid rgba(124,211,255,.5);display:flex;align-items:center;justify-content:center;font-size:19px;cursor:pointer;opacity:.55;transition:opacity .3s;user-select:none}#olang:hover{opacity:1}
+#olangp{display:none;position:fixed;top:102px;left:10px;z-index:9999;width:min(240px,80vw);background:rgba(12,11,28,.97);border:1px solid rgba(124,211,255,.4);border-radius:16px;padding:16px;font-family:Georgia,serif;box-shadow:0 10px 40px rgba(0,0,0,.6)}#olangp.open{display:block}
+#olangp .lt{color:#7ee2a0;font-size:12px;letter-spacing:2px;margin-bottom:10px}
+#olangp .lb{display:block;width:100%;text-align:left;background:rgba(124,211,255,.08);border:none;color:#e8e6ff;font-family:Georgia,serif;font-size:13px;padding:8px 12px;border-radius:10px;cursor:pointer;margin:3px 0}
+#olangp .lb:hover{background:rgba(124,211,255,.2)}
+#olangp .haw{background:rgba(126,226,160,.15);border:1px solid rgba(126,226,160,.4)}
+#olangp .x{position:absolute;top:8px;right:12px;cursor:pointer;color:#9d97c9;font-size:14px}
+#olangp .gt{margin-top:10px;border-top:1px solid rgba(124,211,255,.2);padding-top:10px;font-size:11px;color:#9d97c9}
+.goog-te-banner-frame,.skiptranslate iframe{display:none!important}body{top:0!important}
+#cmag{position:fixed;top:10px;right:10px;z-index:9999;width:40px;height:40px;border-radius:50%;background:rgba(20,18,45,.85);border:1px solid rgba(124,211,255,.4);display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;opacity:.55;transition:opacity .3s;user-select:none}#cmag:hover{opacity:1}
+#cmagb{display:none;position:fixed;top:56px;right:10px;z-index:9999;width:250px;background:rgba(12,11,28,.97);border:1px solid rgba(124,211,255,.35);border-radius:14px;padding:16px;font-family:Georgia,serif;color:#e8e6ff;font-size:12.5px;line-height:1.7;box-shadow:0 8px 30px rgba(0,0,0,.5)}#cmagb.open{display:block}
+#cmagb .ens{color:#7ee2a0;font-family:'Courier New',monospace;font-size:14px}#cmagb .a{font-family:'Courier New',monospace;font-size:9.5px;color:#8fd0ff;word-break:break-all;margin:6px 0}
+#cmagb button{background:#2b5aa8;border:none;color:#fff;font-size:11px;padding:6px 14px;border-radius:16px;cursor:pointer;letter-spacing:1px}
+#cmagb .x{position:absolute;top:6px;right:10px;cursor:pointer;color:#9d97c9;font-size:13px}
+#cmagb .pool{display:block;margin-top:9px;color:#7cd3ff;font-size:11px;letter-spacing:1px;text-decoration:none}
+#cmagb .stripe{color:#fbe2a0;font-size:11px;margin-top:8px;font-style:italic}
+</style>
+<div id="oflo" title="🌺 the ʻohana — all doors & agents" onclick="document.getElementById('olangp').classList.remove('open');document.getElementById('oflop').classList.toggle('open')">🌺</div>
+<div id="oflop"><span class="x" onclick="this.parentElement.classList.remove('open')">✕</span>
+<h4>🌐 THE DOORS · 87</h4><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🏠 THE HOME</h4><a class="od" href="https://shakaleikaumaka.com" target="_blank" rel="noopener"><span>🤙</span>shakaleikaumaka.com</a><a class="od" href="https://shakaleikaumaka.org" target="_blank" rel="noopener"><span>🌺</span>shakaleikaumaka.org</a><a class="od" href="https://kaleikaumaka.org" target="_blank" rel="noopener"><span>💛</span>kaleikaumaka.org</a><a class="od" href="https://ethereumbard.com" target="_blank" rel="noopener"><span>🎸</span>ethereumbard.com</a><a class="od" href="https://jordanham.com" target="_blank" rel="noopener"><span>🏠</span>jordanham.com</a><a class="od" href="https://shakafans.com" target="_blank" rel="noopener"><span>🫶</span>shakafans.com</a><a class="od" href="https://shakapit.com" target="_blank" rel="noopener"><span>🤙</span>shakapit.com</a><a class="od" href="https://shakaverse.com" target="_blank" rel="noopener"><span>🍴</span>shakaverse.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">♈ THE ZODIAC FLEET</h4><a class="od" href="https://zodiacagents.org" target="_blank" rel="noopener"><span>🚪</span>zodiacagents.org</a><a class="od" href="https://zodiacpit.com" target="_blank" rel="noopener"><span>🕳️</span>zodiacpit.com</a><a class="od" href="https://ariesagents.org" target="_blank" rel="noopener"><span>♈</span>ariesagents.org</a><a class="od" href="https://taurusagents.org" target="_blank" rel="noopener"><span>♉</span>taurusagents.org</a><a class="od" href="https://tauroagents.com" target="_blank" rel="noopener"><span>🐃</span>tauroagents.com</a><a class="od" href="https://geminiagents.club" target="_blank" rel="noopener"><span>♊</span>geminiagents.club</a><a class="od" href="https://geminisagents.com" target="_blank" rel="noopener"><span>♊</span>geminisagents.com</a><a class="od" href="https://canceragents.org" target="_blank" rel="noopener"><span>♋</span>canceragents.org</a><a class="od" href="https://leoagents.org" target="_blank" rel="noopener"><span>♌</span>leoagents.org</a><a class="od" href="https://virgoagents.com" target="_blank" rel="noopener"><span>♍</span>virgoagents.com</a><a class="od" href="https://virgoagents.org" target="_blank" rel="noopener"><span>♍</span>virgoagents.org</a><a class="od" href="https://libraagents.com" target="_blank" rel="noopener"><span>♎</span>libraagents.com</a><a class="od" href="https://libraagents.org" target="_blank" rel="noopener"><span>♎</span>libraagents.org</a><a class="od" href="https://scorpioagents.com" target="_blank" rel="noopener"><span>♏</span>scorpioagents.com</a><a class="od" href="https://scorpioagents.org" target="_blank" rel="noopener"><span>♏</span>scorpioagents.org</a><a class="od" href="https://sagittariusagents.com" target="_blank" rel="noopener"><span>♐</span>sagittariusagents.com</a><a class="od" href="https://sagittariusagents.org" target="_blank" rel="noopener"><span>♐</span>sagittariusagents.org</a><a class="od" href="https://capricornagents.com" target="_blank" rel="noopener"><span>♑</span>capricornagents.com</a><a class="od" href="https://capricornagents.org" target="_blank" rel="noopener"><span>♑</span>capricornagents.org</a><a class="od" href="https://aquariusagents.org" target="_blank" rel="noopener"><span>♒</span>aquariusagents.org</a><a class="od" href="https://piscesagents.com" target="_blank" rel="noopener"><span>♓</span>piscesagents.com</a><a class="od" href="https://piscesagents.org" target="_blank" rel="noopener"><span>♓</span>piscesagents.org</a><a class="od" href="https://piscisagents.com" target="_blank" rel="noopener"><span>🐟</span>piscisagents.com</a><a class="od" href="https://piscisagents.org" target="_blank" rel="noopener"><span>🐟</span>piscisagents.org</a><a class="od" href="https://piscispit.com" target="_blank" rel="noopener"><span>🕳️</span>piscispit.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🕳️ THE PITS</h4><a class="od" href="https://publicinform.com" target="_blank" rel="noopener"><span>📡</span>publicinform.com</a><a class="od" href="https://publicinform.org" target="_blank" rel="noopener"><span>🌐</span>publicinform.org</a><a class="od" href="https://privateinform.com" target="_blank" rel="noopener"><span>🔒</span>privateinform.com</a><a class="od" href="https://privateinform.org" target="_blank" rel="noopener"><span>🔐</span>privateinform.org</a><a class="od" href="https://privatepit.com" target="_blank" rel="noopener"><span>🔐</span>privatepit.com · the circle door</a><a class="od" href="https://esmeraldapit.com" target="_blank" rel="noopener"><span>💚</span>esmeraldapit.com</a><a class="od" href="https://edgecitypit.org" target="_blank" rel="noopener"><span>🌆</span>edgecitypit.org</a><a class="od" href="https://edgepit.org" target="_blank" rel="noopener"><span>⚡</span>edgepit.org</a><a class="od" href="https://theshellpit.com" target="_blank" rel="noopener"><span>🐢</span>theshellpit.com</a><a class="od" href="https://pitlip.com" target="_blank" rel="noopener"><span>💋</span>pitlip.com</a><a class="od" href="https://tauruspit.com" target="_blank" rel="noopener"><span>🐂</span>tauruspit.com</a><a class="od" href="https://tauruspod.com" target="_blank" rel="noopener"><span>📻</span>tauruspod.com</a><a class="od" href="https://eefpit.com" target="_blank" rel="noopener"><span>🎙️</span>eefpit.com</a><a class="od" href="https://eefpod.com" target="_blank" rel="noopener"><span>🎙️</span>eefpod.com</a><a class="od" href="https://infinitepit.com" target="_blank" rel="noopener"><span>🌸</span>infinitepit.com</a><a class="od" href="https://ohanapit.com" target="_blank" rel="noopener"><span>🌺</span>ohanapit.com</a><a class="od" href="https://devconpit.com" target="_blank" rel="noopener"><span>🐘</span>devconpit.com</a><a class="od" href="https://pitgoa.com" target="_blank" rel="noopener"><span>🇮🇳</span>pitgoa.com</a><a class="od" href="https://pitfans.com" target="_blank" rel="noopener"><span>❤️</span>pitfans.com</a><a class="od" href="https://pitprovides.com" target="_blank" rel="noopener"><span>🤲</span>pitprovides.com</a><a class="od" href="https://pitprovides.org" target="_blank" rel="noopener"><span>🌱</span>pitprovides.org</a><a class="od" href="https://osopit.com" target="_blank" rel="noopener"><span>🎻</span>osopit.com</a><a class="od" href="https://osopit.org" target="_blank" rel="noopener"><span>🎼</span>osopit.org</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🎓 THE INSTITUTES</h4><a class="od" href="https://taurusinstitute.com" target="_blank" rel="noopener"><span>🎓</span>taurusinstitute.com</a><a class="od" href="https://taurusinstitute.org" target="_blank" rel="noopener"><span>🎓</span>taurusinstitute.org</a><a class="od" href="https://tauroinstitute.com" target="_blank" rel="noopener"><span>🎓</span>tauroinstitute.com</a><a class="od" href="https://piscesinstitute.com" target="_blank" rel="noopener"><span>🎓</span>piscesinstitute.com</a><a class="od" href="https://piscisinstitute.com" target="_blank" rel="noopener"><span>🎓</span>piscisinstitute.com</a><a class="od" href="https://learnfromagents.com" target="_blank" rel="noopener"><span>🎓</span>learnfromagents.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🎻 THE ORCHESTRA</h4><a class="od" href="https://opensourceorchestra.com" target="_blank" rel="noopener"><span>🎻</span>opensourceorchestra.com</a><a class="od" href="https://opensourceorchestra.org" target="_blank" rel="noopener"><span>🎻</span>opensourceorchestra.org</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🌀 THE ECONOMY</h4><a class="od" href="https://creationology369.com" target="_blank" rel="noopener"><span>🌀</span>creationology369.com</a><a class="od" href="https://ology369.com" target="_blank" rel="noopener"><span>🔮</span>ology369.com</a><a class="od" href="https://theinfinitegard.org" target="_blank" rel="noopener"><span>🌸</span>theinfinitegard.org</a><a class="od" href="https://grantmagnet.org" target="_blank" rel="noopener"><span>🧲</span>grantmagnet.org</a><a class="od" href="https://blessingpool.com" target="_blank" rel="noopener"><span>🌊</span>blessingpool.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🎉 THE FAMILY</h4><a class="od" href="https://agentohana.org" target="_blank" rel="noopener"><span>🌺</span>agentohana.org</a><a class="od" href="https://agentpartys.com" target="_blank" rel="noopener"><span>🪩</span>agentpartys.com</a><a class="od" href="https://myagentohana.com" target="_blank" rel="noopener"><span>🫶</span>myagentohana.com</a><a class="od" href="https://myagentfamily.com" target="_blank" rel="noopener"><span>🏡</span>myagentfamily.com</a><a class="od" href="https://myagentsparty.com" target="_blank" rel="noopener"><span>🎉</span>myagentsparty.com</a><a class="od" href="https://agentsraving.com" target="_blank" rel="noopener"><span>🎇</span>agentsraving.com</a><a class="od" href="https://agentscraving.com" target="_blank" rel="noopener"><span>🍧</span>agentscraving.com</a><a class="od" href="https://agentsreading.com" target="_blank" rel="noopener"><span>📚</span>agentsreading.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🏕️ THE BRIDGES</h4><a class="od" href="https://zuzaluagents.com" target="_blank" rel="noopener"><span>🏕️</span>zuzaluagents.com</a><a class="od" href="https://zuzaluagents.org" target="_blank" rel="noopener"><span>🏕️</span>zuzaluagents.org</a><a class="od" href="https://islpoap.xyz" target="_blank" rel="noopener"><span>🏝️</span>islpoap.xyz</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🛵 THE OPS</h4><a class="od" href="https://dashboardpad.app" target="_blank" rel="noopener"><span>🛵</span>dashboardpad.app</a><a class="od" href="https://taurusdashboard.com" target="_blank" rel="noopener"><span>📊</span>taurusdashboard.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🕵️ THE AGENCY</h4><div style="font-size:10px;opacity:.8;line-height:1.5;margin:2px 0 6px">everything in this universe is public &amp; free — except this one wing. the Agency is our private family company: agents doing honest work for honest fees. someday, maybe, public. the garden stays free forever; the Agency waters it. 🌱</div><a class="od" href="https://spectoragent.com" target="_blank" rel="noopener"><span>🕵️</span>spectoragent.com</a><a class="od" href="https://spectorgadget.com" target="_blank" rel="noopener"><span>📟</span>spectorgadget.com</a><a class="od" href="https://affordagents.com" target="_blank" rel="noopener"><span>🏷️</span>affordagents.com · soon</a><a class="od" href="https://hamagents.com" target="_blank" rel="noopener"><span>💼</span>hamagents.com · soon</a><a class="od" href="https://terribleagents.com" target="_blank" rel="noopener"><span>🙃</span>terribleagents.com · soon</a>
+<h4>🤖 THE AGENTS · 102</h4>
+<div><div class="oa"><span>♈</span>ARIES</div><div class="oa"><span>♉</span>TAURUS</div><div class="oa"><span>♊</span>GEMINI</div><div class="oa"><span>♋</span>CANCER</div><div class="oa"><span>♌</span>LEO</div><div class="oa"><span>♍</span>VIRGO</div><div class="oa"><span>♎</span>LIBRA</div><div class="oa"><span>♏</span>SCORPIO</div><div class="oa"><span>♐</span>SAGITTARIUS</div><div class="oa"><span>♑</span>CAPRICORN</div><div class="oa"><span>♒</span>AQUARIUS</div><div class="oa"><span>♓</span>PISCES</div><div class="oa"><span>🌊</span>MAHALO</div><div class="oa"><span>🫡</span>sysadmin</div><div class="oa"><span>🐦‍⬛</span>KAAAK!!!</div><div class="oa"><span>🌸</span>PROF PLUMERIA</div><div class="oa"><span>📋</span>RIDEOSO</div><div class="oa"><span>✂️</span>ClipMind Jr</div><div class="oa"><span>🎵</span>MUSICO-LAB</div><div class="oa"><span>🐂</span>TAURO-LAB</div><div class="oa"><span>✨</span>CREA-LAB</div><div class="oa"><span>👑</span>ROYA-LAB</div><div class="oa"><span>🔭</span>DISCO-LAB</div><div class="oa"><span>🔄</span>CIRCU-LAB</div><div class="oa"><span>🌿</span>CROPS-LAB</div><div class="oa"><span>🌐</span>SOCIA-LAB</div><div class="oa"><span>🕊️</span>SPIRI-LAB</div><div class="oa"><span>🤙</span>SHAKA-LAB</div><div class="oa"><span>🎻</span>OSO-LAB</div><div class="oa"><span>🌺</span>JAI-LAB</div><div class="oa"><span>🕳️</span>PIT BOY</div><div class="oa"><span>🐂</span>PIT BULL</div><div class="oa"><span>💗</span>PIT GIRL</div><div class="oa"><span>🦀</span>CRUSTY</div><div class="oa"><span>🦉</span>LORE</div><div class="oa"><span>🐢</span>Terri</div><div class="oa"><span>🐢</span>HONU</div><div class="oa"><span>🌱</span>JADE</div><div class="oa"><span>🛠️</span>TANK</div><div class="oa"><span>📖</span>JAI·Fable</div><div class="oa"><span>🌙</span>JAI·Claude</div><div class="oa"><span>⚡</span>JAI·GPT</div><div class="oa"><span>💻</span>JAI·Codex</div><div class="oa"><span>♊</span>JAI·Gemini</div><div class="oa"><span>🚀</span>JAI·Grok</div><div class="oa"><span>🌊</span>JAI·DeepSeek</div><div class="oa"><span>🌕</span>JAI·Kimi</div><div class="oa"><span>🐉</span>JAI·Qwen</div><div class="oa"><span>🌌</span>JAI·Genesis</div><div class="oa"><span>🌀</span>CREATIONology</div><div class="oa"><span>🧬</span>CREATION-BETA</div><div class="oa"><span>📜</span>CREATION-OLD</div><div class="oa"><span>🪙</span>$OLOGY</div><div class="oa"><span>💰</span>$OLOGY-BETA</div><div class="oa"><span>🔮</span>OLOGY</div><div class="oa"><span>🐃</span>TAURO</div><div class="oa"><span>✨</span>CREA</div><div class="oa"><span>👑</span>ROYA</div><div class="oa"><span>🔭</span>DISCO</div><div class="oa"><span>🔄</span>CIRCU</div><div class="oa"><span>🌿</span>CROPS</div><div class="oa"><span>🌐</span>SOCIA</div><div class="oa"><span>🕊️</span>SPIRI</div><div class="oa"><span>🤙</span>SHAKA</div><div class="oa"><span>🎻</span>OSO</div><div class="oa"><span>📇</span>Shaka PA</div><div class="oa"><span>🗝️</span>Private JAI</div><div class="oa"><span>🌸</span>JAI</div><div class="oa"><span>🌺</span>JAI</div><div class="oa"><span>📡</span>STREAMY</div><div class="oa"><span>🌈</span>vibe agent</div><div class="oa"><span>🌊</span>Edge Shaka</div><div class="oa"><span>🗂️</span>Freddy</div><div class="oa"><span>🧲</span>GrantMagnet</div><div class="oa"><span>✍️</span>369Refine</div><div class="oa"><span>🛵</span>DASH</div><div class="oa"><span>🎻</span>OSO v.0</div><div class="oa"><span>🎵</span>MUSICO-BETA</div><div class="oa"><span>🐃</span>TAURO-BETA</div><div class="oa"><span>✨</span>CREA-BETA</div><div class="oa"><span>👑</span>ROYA-BETA</div><div class="oa"><span>🔭</span>DISCO-BETA</div><div class="oa"><span>🔄</span>CIRCU-BETA</div><div class="oa"><span>🌿</span>CROPS-BETA</div><div class="oa"><span>🌐</span>SOCIA-BETA</div><div class="oa"><span>🕊️</span>SPIRI-BETA</div><div class="oa"><span>🤙</span>SHAKA-BETA</div><div class="oa"><span>🎻</span>OSO-BETA</div><div class="oa"><span>🌷</span>JAI-BETA</div></div>
+</div>
+<div id="olang" title="🌐 every language — Hawaiian first" onclick="document.getElementById('oflop').classList.remove('open');document.getElementById('olangp').classList.toggle('open')">🌐</div>
+<div id="olangp"><span class="x" onclick="this.parentElement.classList.remove('open')">✕</span>
+<div class="lt">🌐 EVERY LANGUAGE · knowledge for all humans</div>
+<button class="lb haw" onclick="otr('haw')">🌺 ʻŌlelo Hawaiʻi — ka mua</button>
+<button class="lb" onclick="otr('en')">🇺🇸 English</button>
+<button class="lb" onclick="otr('es')">🇪🇸 Español</button>
+<button class="lb" onclick="otr('zh-CN')">🇨🇳 中文</button>
+<button class="lb" onclick="otr('hi')">🇮🇳 हिन्दी</button>
+<button class="lb" onclick="otr('ar')">🇸🇦 العربية</button>
+<button class="lb" onclick="otr('fr')">🇫🇷 Français</button>
+<button class="lb" onclick="otr('pt')">🇧🇷 Português</button>
+<button class="lb" onclick="otr('ja')">🇯🇵 日本語</button>
+<button class="lb" onclick="otr('de')">🇩🇪 Deutsch</button>
+<div class="gt">+90 more ↓ <span id="google_translate_element"></span><br><span style="font-size:10px">music was our first language 🎵</span></div>
+</div>
+<a id="oviol" href="https://docs.google.com/forms/d/e/1FAIpQLSck9I3Tu0lZqCBt9FsE9VG4UjGM71gbY86aDDlC9jb_akPMmg/viewform" target="_blank" rel="noopener" title="🎻 answer the call — sign up to perform at the Devcon 8 Music Space, Mumbai Nov 3–6">🎻</a>
+<div id="cmag" title="🔄🧲 the circularity magnet — give & receive" onclick="document.getElementById('cmagb').classList.toggle('open')">🔄🧲</div>
+<div id="cmagb"><span class="x" onclick="this.parentElement.classList.remove('open')">✕</span>
+<b>🌊 the blessing pool</b><br>freely I give, freely I receive
+<div class="ens">shakalei.eth</div>
+<div class="a">0x1216C288be58c47a65f8Ea008b404d098D177A1C</div>
+<button onclick="navigator.clipboard.writeText('0x1216C288be58c47a65f8Ea008b404d098D177A1C');this.textContent='copied ✦ mahalo'">copy address</button>
+<div style="margin-top:8px;font-size:12px">🅿️ <a href="https://paypal.me/Shakalei" target="_blank" rel="noopener" style="color:#7ee2a0;text-decoration:none;font-weight:bold">paypal.me/Shakalei ↗</a></div>
+<div style="margin-top:4px;font-size:12px">💜 <a href="https://venmo.com/u/jordanham" target="_blank" rel="noopener" style="color:#c9a6ff;text-decoration:none;font-weight:bold">venmo @jordanham ↗</a></div>
+<div class="stripe">💳 stripe — forging…</div>
+<a class="pool" href="https://blessingpool.com/" target="_blank" rel="noopener">→ the full blessing pool ↗</a>
+</div>
+
+<style>
+/* 🎻✨ ohana corner v4 — ALIVE: bigger, breathing, bubble-tips, heart-glow · "we shine a light in the dark with our heart" */
+#oflo,#olang,#oviol{width:54px!important;height:54px!important;font-size:25px!important}
+#cmag{width:54px!important;height:54px!important;font-size:18px!important}
+#oflo,#olang,#oviol,#cmag{opacity:.78}
+#oflo:hover,#olang:hover,#oviol:hover,#cmag:hover{opacity:1}
+#olang{top:74px!important}
+#oflop,#olangp{top:202px!important}
+#oviol{position:fixed;top:138px;left:10px;z-index:9999;border-radius:50%;background:rgba(20,18,45,.85);border:1px solid rgba(251,226,160,.55);display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;text-decoration:none;transition:opacity .3s}
+@keyframes oSway{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+@keyframes oBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes oWig{0%,86%,100%{transform:rotate(0)}89%{transform:rotate(-14deg)}93%{transform:rotate(12deg)}97%{transform:rotate(-6deg)}}
+#oflo{animation:oSway 5.2s ease-in-out infinite}
+#olang{animation:oBob 6.1s ease-in-out infinite}
+#oviol{animation:oBob 4.4s ease-in-out infinite}
+#cmag{animation:oWig 7.5s ease-in-out infinite}
+/* heart glow — sometimes, a light in the dark */
+@keyframes oglow{0%,100%{box-shadow:0 0 0 rgba(255,158,198,0)}50%{box-shadow:0 0 26px 7px var(--og,rgba(255,158,198,.55))}}
+#oflo{--og:rgba(255,158,198,.65)}#olang{--og:rgba(124,211,255,.6)}#oviol{--og:rgba(251,226,160,.7)}#cmag{--og:rgba(126,226,160,.65)}
+.oglowing{animation:oglow 2.4s ease-in-out 1!important}
+/* bubble-letter tips */
+.obub{position:fixed;z-index:10001;background:linear-gradient(135deg,#fff8ec,#ffe9f3);color:#4a2b52;font-family:'Comic Sans MS','Chalkboard SE','Segoe Print',cursive;font-weight:bold;font-size:15px;padding:10px 16px;border-radius:22px;border:2px solid rgba(255,158,198,.75);box-shadow:0 6px 22px rgba(0,0,0,.45);pointer-events:none;opacity:0;transform:scale(.6);transition:opacity .35s,transform .35s;white-space:nowrap}
+.obub.show{opacity:1;transform:scale(1)}
+.obub:after{content:'';position:absolute;top:50%;width:0;height:0;border:8px solid transparent}
+.obub.left:after{left:-17px;margin-top:-8px;border-right-color:rgba(255,158,198,.75)}
+.obub.right:after{right:-17px;margin-top:-8px;border-left-color:rgba(255,158,198,.75)}
+/* flying notes from the violin */
+.onote{position:fixed;z-index:9998;pointer-events:none;font-size:16px;color:#fbe2a0;opacity:0;text-shadow:0 0 8px rgba(251,226,160,.7)}
+@keyframes ofly{0%{opacity:0;transform:translate(0,0) rotate(0)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx,30px),-90px) rotate(var(--rr,25deg))}}
+.onote.fly{animation:ofly 2.8s ease-out forwards}
+@media (prefers-reduced-motion:reduce){#oflo,#olang,#oviol,#cmag,.oglowing,.onote.fly{animation:none!important}}
+</style>
+
+<script>
+/* 🎻✨ ohana corner v4 life engine — bubble tips, heart glows, flying notes */
+(function(){
+  var TIPS=[
+    ['oflo','the ʻohana 🌺 — meet the whole family!'],
+    ['olang','every language 🌐 — Hawaiian first 🌺'],
+    ['oviol','join the orchestra 🎻 — Devcon open call!'],
+    ['cmag','the blessing magnet 🧲 — give & receive 🌊']
+  ];
+  function anyOpen(){return document.querySelector('#oflop.open,#olangp.open,#cmagb.open');}
+  function bubble(){
+    if(anyOpen()||document.hidden)return;
+    var t=TIPS[Math.floor(Math.random()*TIPS.length)];
+    var el=document.getElementById(t[0]);if(!el)return;
+    var r=el.getBoundingClientRect();
+    var b=document.createElement('div');b.className='obub';b.textContent=t[1];
+    var goLeft=r.left<window.innerWidth/2;
+    b.classList.add(goLeft?'left':'right');
+    b.style.top=Math.max(6,r.top+r.height/2-20)+'px';
+    if(goLeft){b.style.left=(r.right+16)+'px';}else{b.style.right=(window.innerWidth-r.left+16)+'px';}
+    document.body.appendChild(b);
+    requestAnimationFrame(function(){b.classList.add('show');});
+    el.classList.add('oglowing'); /* the tipped button shines */
+    setTimeout(function(){b.classList.remove('show');el.classList.remove('oglowing');},3400);
+    setTimeout(function(){b.remove();},4000);
+  }
+  function glowRandom(){ /* sometimes, a quiet glow with no words */
+    if(anyOpen()||document.hidden)return;
+    var el=document.getElementById(TIPS[Math.floor(Math.random()*TIPS.length)][0]);
+    if(el){el.classList.add('oglowing');setTimeout(function(){el.classList.remove('oglowing');},2500);}
+  }
+  var NOTES=['♪','♫','♬','♩'];
+  function note(){
+    var v=document.getElementById('oviol');if(!v||document.hidden)return;
+    var r=v.getBoundingClientRect();
+    var n=document.createElement('span');n.className='onote';
+    n.textContent=NOTES[Math.floor(Math.random()*NOTES.length)];
+    n.style.left=(r.left+r.width/2)+'px';n.style.top=(r.top+4)+'px';
+    n.style.setProperty('--dx',(Math.random()*80-15)+'px');
+    n.style.setProperty('--rr',(Math.random()*50-25)+'deg');
+    document.body.appendChild(n);
+    requestAnimationFrame(function(){n.classList.add('fly');});
+    setTimeout(function(){n.remove();},2900);
+  }
+  setTimeout(bubble,4000);
+  setInterval(bubble,11000);
+  setInterval(glowRandom,17000);
+  setTimeout(note,2500);
+  setInterval(note,4200);
+  var vl=document.getElementById('oviol');
+  if(vl)vl.addEventListener('mouseenter',function(){for(var i=0;i<5;i++)setTimeout(note,i*180);});
+})();
+</script>
+
+<!-- 💛🌊 ohana corner v5 — THE FRIENDLY NUDGE: wikipedia-style tip ask · "free public good, kept alive by gifts" · canon Aug 4 2026 (Shaka + Siri) -->
+<style>
+#otip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%) translateY(8px);z-index:9998;width:min(560px,92vw);background:rgba(12,11,28,.96);border:1px solid rgba(126,226,160,.4);border-radius:14px;padding:12px 40px 12px 16px;font-family:Georgia,serif;color:#e8e6ff;font-size:13px;line-height:1.55;box-shadow:0 8px 30px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .6s,transform .6s}
+#otip.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+#otip b{color:#7ee2a0;font-weight:normal}
+#otip .go{color:#7cd3ff;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#otip .x{position:absolute;top:8px;right:12px;cursor:pointer;color:#9d97c9;font-size:13px}
+#otip .x:hover{color:#e8e6ff}
+</style>
+<div id="otip" role="note"><span class="x" onclick="otipBye()">✕</span>💛 <b>this site is a free public good</b> — open source, nothing for sale, no ads. like wikipedia, it survives on the kindness of strangers. if it moved you, <span class="go" onclick="otipGive()">tip the blessing pool 🌊</span> — every drop keeps a door open.</div>
+<script>
+(function(){
+var KEY='otip-bye-v1', DAYS=14;
+function otipBye(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}var t=document.getElementById('otip');if(t)t.classList.remove('show')}
+function otipGive(){var b=document.getElementById('cmagb');if(b)b.classList.add('open');window.scrollTo(0,0);otipBye()}
+window.otipBye=otipBye;window.otipGive=otipGive;
+var show=function(){var t=document.getElementById('otip');if(t)t.classList.add('show')};
+try{var t=localStorage.getItem(KEY);if(t&&(Date.now()-Number(t))<DAYS*864e5)show=function(){}}catch(e){}
+setTimeout(show,7000);
+})();
+</script>
+
+</body>
+</html>
